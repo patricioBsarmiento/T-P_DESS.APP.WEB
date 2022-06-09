@@ -9,11 +9,13 @@
 body {
   background-color: #FFFF99;
 }
+.container{
+  width: 80%;
+  margin: auto auto;
+}
 .cuerpo-tabla{
     margin: auto auto;
     display: block;
-    padding: 10px;
-    width: 50%;
     background-color: #CC99FF;
 }
 
@@ -27,7 +29,7 @@ span {
 
 select {
   font-style: Perpetua;
-  font-size: x-large;
+  font-size: 14pt;
   color: #FF0066;
   background-color: #6699FF;
 }
