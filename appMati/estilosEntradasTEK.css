@@ -1,0 +1,64 @@
+/* tbody {
+    font-size: 95%;
+    font-style: italic;
+  }
+  
+  tfoot {
+    font-weight: bold;
+  } */
+body {
+  background-color: #FFFF99;
+}
+.cuerpo-tabla{
+	
+    margin: auto auto;
+    display: block;
+    padding: 10px;
+    width: 100%;
+    background-color: #CC99FF;
+}
+
+span {
+  font-style: Tahoma;
+  font-size: large;
+  width: 100;
+  text-transform: capitalize;
+  color: #0000FF;
+}
+
+select {
+  font-style: Perpetua;
+  font-size: x-large;
+  color: #FF0066;
+  background-color: #6699FF;
+}
+
+hr {
+  border-width: medium;
+  border-color: #990099;
+  border-style: solid;
+}
+
+.titulo {
+  color: #008080;
+  text-decoration: blink;
+}
+
+.boton {
+  font-style: Adobe Gothic Std B;
+  font-size: large;
+  color: #009900 ;
+  background-color: #66FFCC;
+  border-color: #808000;
+}
+
+div{
+  width: 100%;
+  text-align: center;
+}
+
+.texto {
+  font-style: Times New Roman;
+  color: #6600CC;
+  background-color: #CCCCFF;
+}
