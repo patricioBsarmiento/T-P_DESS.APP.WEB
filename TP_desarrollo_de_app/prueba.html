@@ -32,10 +32,11 @@
                         </td>
                         <td width="500px"></td>
                         <td> 
-                          <select name="" id="">
-                            <option value="">Barcelona - Ath. Bilbao</option>
-                            <option value=""><span>Real Madrid - Sp. Gijón</span>Real Madrid - Sp. Gijón</option>
-                            <option value=""><span>Dep. La Coruña – Sevilla</span></option>
+                          <select name="" id="equipos" onchange="precioEquipo()">
+                          <option value="">&lt;Elija Equipo&gt;</option>
+                            <option value="barcelona">Barcelona - Ath. Bilbao</option>
+                            <option value="madrid"><span>Real Madrid - Sp. Gijón</span>Real Madrid - Sp. Gijón</option>
+                            <option value="coruña"><span>Dep. La Coruña – Sevilla</span></option>
                           </select>
                         </td>
     
@@ -61,7 +62,7 @@
                     </td>
                       <td ></td>
                       <td>
-                        <input class="texto"  type="number">
+                        <input type="number" class="texto"  id="cantidad" min="1" aria-valuemin="1" value="1" onchange="precioEquipo()" >
                       </td>
                       <td>
                         <div>
@@ -71,7 +72,7 @@
                         
                       </td>
                       <td width="50px"></td>
-                      <td><input class="texto"  type="number"></td>
+                      <td><input class="texto" id="precio" type="number" readonly></td>
                   </tr>
                   
                 </div>

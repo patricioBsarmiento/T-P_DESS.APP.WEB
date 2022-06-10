@@ -127,3 +127,21 @@ function confirmacion(){
     }
     
 }
+function precioEquipo(){
+    selectEquipos = document.getElementById('equipos')
+    inputPrecio = document.getElementById('precio')
+    inputCantidadEntradas = document.getElementById('cantidad')
+    letras = selectEquipos.value;
+    precio = 0
+    if (letras == "barcelona"){
+        precio = 200
+    }
+    if (letras == "madrid"){
+        precio = 150
+    }
+    if (letras == "coruña"){
+        precio = 170
+    }
+    
+    inputPrecio.value = precio * parseInt(inputCantidadEntradas.value)
+}
