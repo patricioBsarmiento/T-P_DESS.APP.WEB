@@ -6,6 +6,13 @@
   tfoot {
     font-weight: bold;
   } */
+/*
+ESTILOS PARA LAS VALIDACIONES
+*/
+.error {
+  background-color:#ff0000;
+}
+/*---------------------------------*/
 body {
   background-color: #FFFF99;
 }

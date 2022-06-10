@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="pruebaDeEStilo.css">
+    <script src="js/validaciones.js"></script>
     <title>prueba</title>
 </head>
 <body>
@@ -100,21 +102,21 @@
                       </div>
                     </td>
                     <td></td>
-                    <td><input class="texto"  type="text" class="btn-group" role="group" aria-label="Button group"></td>
+                    <td><input  type="text" class="texto" id="apellido"  onblur="validaApellido()" role="group" aria-label="Button group"></td>
                     
                     <td><div><span>Nombre:</span></div></td>
                     <td></td>
-                    <td><input class="texto"  type="text" class="btn-group" role="group" aria-label="Button group"></td>
+                    <td><input type="text" class="texto" id="nombre" onblur="validaNombre()"   role="group" aria-label="Button group"></td>
                   </tr>
     
                   <tr height="15"></tr>
                   <tr>
                     <td><div><span>E-Mail:</span></div></td>
                     <td></td>
-                    <td><input class="texto"  type="text" class="btn-group" role="group" aria-label="Button group"></td>
+                    <td><input type="email" class="texto" id="email" onblur="validaEmail()"  role="group" aria-label="Button group"></td>
                     <td><div><span>Confirme el E-Mail:</span></div></td>
                     <td></td>
-                    <td><input class="texto"  type="text" class="btn-group" role="group" aria-label="Button group"></td>
+                    <td><input type="email" class="texto" id="email_conf" onblur="validaEmail()"  role="group" aria-label="Button group"></td>
                   </tr>
     
                   <tr height="15"></tr>

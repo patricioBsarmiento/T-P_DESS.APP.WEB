@@ -1,4 +1,4 @@
-function apellido(){
+function validaApellido(){
     validacion=document.getElementById("apellido")
     letras = validacion.value; 
     parent = validacion.parentElement;
@@ -17,11 +17,11 @@ function apellido(){
         if(element!== null){
             parent.removeChild(element)
         }
-        validacion.setAttribute("class", "click")
+        validacion.setAttribute("class", "texto")
     }       
 }
 
-function nombre(){
+function validaNombre(){
     validacion=document.getElementById("nombre")
     letras = validacion.value; 
     parent = validacion.parentElement;
@@ -31,7 +31,7 @@ function nombre(){
     if (letras == null || letras == "" || /^[0-9]+$/.test(letras)){
         validacion.setAttribute("class", "error")
 
-        if (document.getElementById("txtApellido") === null){
+        if (document.getElementById("txtNombre") === null){
             parent.appendChild(texto)
         }
     }
@@ -40,7 +40,7 @@ function nombre(){
         if(element!== null){
             parent.removeChild(element)
         }
-        validacion.setAttribute("class", "click")
+        validacion.setAttribute("class", "texto")
     }       
 }
 function tecla(id){
@@ -59,6 +59,7 @@ function validaEmail(){
     texto.innerHTML='<span> Los correos electrónicos no son iguales </span>';
     if (valorEmail !== valorEmailConf){
         email.setAttribute("class", "error")
+        emailConf.setAttribute("class", "error")
 
         if (document.getElementById("txtEmail") === null){
             parent.appendChild(texto)
@@ -69,13 +70,14 @@ function validaEmail(){
         if(element!== null){
             parent.removeChild(element)
         }
-        validacion.setAttribute("class", "click")
+        email.setAttribute("class", "texto")
+        emailConf.setAttribute("class", "texto")
     }
     emailValido = document.createElement('DIV');
     emailValido.setAttribute("id", "txtemailValido")
     emailValido.innerHTML='<span> El correo no es válido, verifique que tenga @ y finalice en .com </span>';  
-    if (!email.checkValidity() && !(/\.[a-z]{3}$/.test(valorEmail)) ){
-        validacion.setAttribute("class", "error")
+    if (!email.checkValidity() || !(/\.[a-z]{3}$/.test(valorEmail)) ){
+        email.setAttribute("class", "error")
 
         if (document.getElementById("txtemailValido") === null){
             parent.appendChild(emailValido)
@@ -86,7 +88,7 @@ function validaEmail(){
         if(element!== null){
             parent.removeChild(element)
         }
-        validacion.setAttribute("class", "click")
+        email.setAttribute("class", "texto")
     }  
 }
 
