@@ -6,9 +6,15 @@
   tfoot {
     font-weight: bold;
   } */
+
+.error {
+  background-color:#FF0000;
+}
+/*---------------------------------*/
 body {
   background-color: #FFFF99;
 }
+
 .cuerpo-tabla{
 	
     margin: auto auto;

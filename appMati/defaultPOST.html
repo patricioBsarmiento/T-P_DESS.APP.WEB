@@ -5,10 +5,11 @@
 		<meta http-equi="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="widtd=device-widtd, intial-scale=1.0">
 		<link rel="stylesheet" href="estilosEntradasTEK.css">
+		<script src="validaciones.js"></script>
 		<title>Entradas-TEK </title>
 	</head>
 	<body>
-		<form action="ConfirmacionPOST.asp" metdod="post">
+		<form action="ConfirmacionPOST.asp" onsubmit="return validaciones_genericas()" metdod="post">
 			<table>
 				<tbody class="cuerpo-tabla">
 					<td colspan="4">
@@ -23,7 +24,7 @@
 						<td>Seleccione equipo </td>
 						<td>
 							<label for="cboEquipos"></label>
-							<select name="cboEquipos" id="cboEquipos">
+							<select name="cboEquipos" id="cboEquipos" onchange="precioEquipo()">
 								<option value="1">Barcelona
 								<option value="2">Real Madrid
 								<option value="3">Dep. La Coruña
@@ -36,11 +37,11 @@
 						<td>Seleccione ubicacón	</td>
 						<td>
 							<label for="cboUbicacion"></label>
-							<select name="cboUbicacion" id="cboUbicacion">
+							<select name="cboUbicacion" id="cboUbicacion" onchange="precioEquipo()">
 								<option value="Popular local">Popular local
 								<option value="Popular visitante">Popular visitante
-								<option value="Platea local">Platea local
-								<option value="Platea visitante">Platea visitante
+								<option value="Platea">Platea local
+								<option value="Platea">Platea visitante
 							</select>
 						</td>
 					</tr>
@@ -48,10 +49,13 @@
 						<td>Cantidad de entradas	</td>
 						<td>
 							<label for="cantidad"></label>
-							<input type="number" id="cantidad" name="cantidad" min="1" max="6">
+							<input type="number" id="cantidad" name="cantidad" min="1" max="20" onchange="precioEquipo()">
 						</td>
-						<td>Precio	</td>
-						<td>PRECIO	</td>
+						<td>Precio</td>
+						<td>
+							<input class="texto" id="precio" type="number" readonly>
+						</td>
+						
 					</tr>
 					
 					<td colspan="4">
@@ -65,24 +69,24 @@
 						<td>Apellido	</td>
 						<td>
 							<label for="txtApellido"></label>
-							<input class="texto" type="text" name="txtApellido" id="txtApellido" maxlengtd="25">
+							<input class="texto" type="text" name="txtApellido" id="txtApellido" onblur="validaApellido()" maxlengtd="25" role="group" aria-label="Button group" required>
 						</td>
 						<td>Nombre	</td>
 						<td>
 							<label for="txtNombre"></label>
-							<input class="texto" type="text" name="txtNombre" id="txtNombre" maxlengtd="25">				
+							<input class="texto" type="text" name="txtNombre" id="txtNombre" onblur="validaNombre()" maxlengtd="25" role="group" aria-label="Button group" required>				
 						</td>
 					</tr>
 					<tr height="50">
 						<td>Email	</td>
 						<td>
 							<label for="email"></label>
-							<input class="texto" type="email" id="email" name="email">
+							<input class="texto" type="email" id="email" name="email" onblur="validaEmail()"  role="group" aria-label="Button group">
 						</td>
 						<td>Confirmar email	</td>
 						<td>
 							<label for="email2"></label>
-							<input class="texto" type="email" id="email2" name="email2">
+							<input class="texto" type="email" id="email_conf" name="email2" onblur="validaEmail()"  role="group" aria-label="Button group">
 						</td>
 					</tr>
 					<td colspan="4">
@@ -95,7 +99,9 @@
 					<tr height="50">
 						<td colspan="4">
 							<center>
-								<img src="imagen/tarjetas.jpg" alt="tarjetas" style="widtd:200px;height:50px;">
+								<img src="imagen/visa.jpg" alt="visa" onclick="cuotas('visa')" style="widtd:200px;height:50px;">
+								<img src="imagen/master.jpg" alt="master" onclick="cuotas('master')" style="widtd:200px;height:50px;">
+								<img src="imagen/american.jpg" alt="amex" onclick="cuotas('amex')" style="widtd:200px;height:50px;">
 							</center>
 						</td>
 					</tr>
@@ -103,9 +109,9 @@
 						<td colspan="4">
 							<center>
 							<label for="rdoTarjeta"></label>
-							<input type="radio" name="rdoTarjeta" style="margin: 25px" value="VISA">
-							<input type="radio" name="rdoTarjeta" value="MASTERCARD">
-							<input type="radio" name="rdoTarjeta" style="margin: 25px" value="AMERICAN EXPRESS">
+							<input type="radio" name="rdoTarjeta" style="margin: 25px" id="visa" value="visa">
+							<input type="radio" name="rdoTarjeta" id="master" value="master">
+							<input type="radio" name="rdoTarjeta" id="amex" style="margin: 25px" value="amex">
 							</center>
 						</td>
 					</tr>
