@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +14,7 @@
       <form action="submit">
         <table  >
             <tbody class="cuerpo-tabla">
-                    
+
                     <td colspan="6">
                       <div>
                         <span class="titulo">ENTRADAS-TEK</span>
@@ -22,16 +22,16 @@
                       </div>
                     </td>
                     <tr height="15"></tr>
-                
+
                     <tr>
-                        
+
                         <td width="1600px" >
                           <div>
                             <span>Seleccione equipo:</span>
                           </div>
                         </td>
                         <td width="500px"></td>
-                        <td> 
+                        <td>
                           <select name="" id="equipos" onchange="precioEquipo()">
                           <option value="">&lt;Elija Equipo&gt;</option>
                             <option value="barcelona">Barcelona - Ath. Bilbao</option>
@@ -39,22 +39,22 @@
                             <option value="coruña"><span>Dep. La Coruña – Sevilla</span></option>
                           </select>
                         </td>
-    
-                        
+
+
                         <td  width="1600px"><div><span>Seleccione ubicación:</span></div></td>
                         <td width="60px"></td>
                         <td width="40px">
-                          <select name="" id="">
-                            <option value=""><span>Popular Local</span></option>
-                            <option value=""><span>Popular Visitante</span></option>
-                            <option value=""><span>Platea Local</span></option>
-                            <option value=""><span>Platea Visitante</span></option>
+                          <select name="" id="idUbicacion" onchange="precioEquipo()">
+                            <option value="popular"><span>Popular Local</span></option>
+                            <option value="popular"><span>Popular Visitante</span></option>
+                            <option value="platea"><span>Platea Local</span></option>
+                            <option value="platea"><span>Platea Visitante</span></option>
                           </select>
-                
+
                 <tr height="15"></tr>
                 <div>
                   <tr>
-                    
+
                     <td>
                       <div>
                         <span>Cantidad de entradas:</span>
@@ -68,34 +68,34 @@
                         <div>
                           <span>Precio:</span>
                         </div>
-                      
-                        
+
+
                       </td>
                       <td width="50px"></td>
                       <td><input class="texto" id="precio" type="number" readonly></td>
                   </tr>
-                  
+
                 </div>
-                
+
                 <div>
                   <td colspan="6">
                     <hr />
                   </td>
                 </div>
-    
+
                   <tr height="15"></tr>
                     <td colspan="6">
                       <div>
                         <span class="titulo">INFORMACION DE PAGO</span>
                       </td>
-                   
+
                   <tr height="15"></tr>
                   <div>
                     <td colspan="6">
                       <hr />
                     </td>
                   </div>
-    
+
                   <tr>
                     <td>
                       <div>
@@ -104,12 +104,12 @@
                     </td>
                     <td></td>
                     <td><input  type="text" class="texto" id="apellido"  onblur="validaApellido()" role="group" aria-label="Button group"></td>
-                    
+
                     <td><div><span>Nombre:</span></div></td>
                     <td></td>
                     <td><input type="text" class="texto" id="nombre" onblur="validaNombre()"   role="group" aria-label="Button group"></td>
                   </tr>
-    
+
                   <tr height="15"></tr>
                   <tr>
                     <td><div><span>E-Mail:</span></div></td>
@@ -119,7 +119,7 @@
                     <td></td>
                     <td><input type="email" class="texto" id="email_conf" onblur="validaEmail()"  role="group" aria-label="Button group"></td>
                   </tr>
-    
+
                   <tr height="15"></tr>
                   <div>
                     <td colspan="6">
@@ -134,29 +134,35 @@
                       <hr />
                     </td>
                   </div>
-    
+
                   <tr height="15"></tr>
                   <tr>
-                      <td colspan="6"><div><img width="200px" src="/TP_desarrollo_de_app/img/kisspng-mastercard-payment-visa-credit-card-emv-credit-card-visa-and-master-card-transparent-backg-5a77bb4a42a195.9274531015177961702729.jpg" alt=""></div></td>
+                      <td colspan="6">
+                        <div>
+                          <img width="200px" height="120px" src="img/master.png" alt="" onclick="cuotas('master')">
+                          <img width="200px" height="120px" src="img/visa.png" alt="" onclick="cuotas('visa')">
+                          <img width="200px" height="120px" src="img/amex.jpeg" alt="" onclick="cuotas('amex')">
+                        </div>
+                    </td>
                   </tr>
-    
+
                   <tr height="15"></tr>
                   <tr>
                       <td colspan="6"><div><input class="boton" type="checkbox" value=""><input type="checkbox" value=""><input type="checkbox" value=""></td></div>
                   </tr>
-    
+
                   <div>
                     <td colspan="6">
                       <hr />
                     </td>
                   </div>
-    
+
                   <tr height="15"></tr>
-                  
+
                   <tr>
                       <td colspan="6" ><div><input class="boton" type="submit" value="Aceptar"> <input class="boton" type="button" value="Limpiar"></div></td>
                   </tr>
-        </tbody>      
+        </tbody>
         </table>
       </form>
     </div>
