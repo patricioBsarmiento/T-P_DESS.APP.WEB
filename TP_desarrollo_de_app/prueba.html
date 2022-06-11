@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container">
-      <form action="submit">
+      <form action="submit" onsubmit="return validaciones_genericas()" method="GET">
         <table  >
             <tbody class="cuerpo-tabla">
 
@@ -62,7 +62,7 @@
                     </td>
                       <td ></td>
                       <td>
-                        <input type="number" class="texto"  id="cantidad" min="1" aria-valuemin="1" value="1" onchange="precioEquipo()" >
+                        <input type="number" class="texto"  id="cantidad" min="1" max="20" aria-valuemin="1" value="1" onchange="precioEquipo()" >
                       </td>
                       <td>
                         <div>
@@ -103,11 +103,11 @@
                       </div>
                     </td>
                     <td></td>
-                    <td><input  type="text" class="texto" id="apellido"  onblur="validaApellido()" role="group" aria-label="Button group"></td>
+                    <td><input  type="text" class="texto" id="apellido"  onblur="validaApellido()" maxlength="25" role="group" aria-label="Button group" required></td>
 
                     <td><div><span>Nombre:</span></div></td>
                     <td></td>
-                    <td><input type="text" class="texto" id="nombre" onblur="validaNombre()"   role="group" aria-label="Button group"></td>
+                    <td><input type="text" class="texto" id="nombre" onblur="validaNombre()"  maxlength="25"  role="group" aria-label="Button group" required></td>
                   </tr>
 
                   <tr height="15"></tr>
@@ -139,16 +139,19 @@
                   <tr>
                       <td colspan="6">
                         <div>
-                          <img width="200px" height="120px" src="img/master.png" alt="" onclick="cuotas('master')">
-                          <img width="200px" height="120px" src="img/visa.png" alt="" onclick="cuotas('visa')">
-                          <img width="200px" height="120px" src="img/amex.jpeg" alt="" onclick="cuotas('amex')">
+                          <input type="radio" name="tarjeta" value="master" id=master>
+                          <img width="200px" height="120px" src="img/master.png" alt="" onclick="cuotas('master')" for="master">
+                          <input type="radio" name="tarjeta" value="visa" id="visa">
+                          <img width="200px" height="120px" src="img/visa.png" alt="" onclick="cuotas('visa')" for="visa">
+                          <input type="radio" name="tarjeta" value="amex" id="amex">
+                          <img width="200px" height="120px" src="img/amex.jpeg" alt="" onclick="cuotas('amex')" for="amex">
                         </div>
                     </td>
                   </tr>
 
                   <tr height="15"></tr>
                   <tr>
-                      <td colspan="6"><div><input class="boton" type="checkbox" value=""><input type="checkbox" value=""><input type="checkbox" value=""></td></div>
+                      <!-- <td colspan="6"><div><input class="boton" type="checkbox" value=""><input type="checkbox" value=""><input type="checkbox" value=""></td></div> -->
                   </tr>
 
                   <div>
@@ -160,7 +163,12 @@
                   <tr height="15"></tr>
 
                   <tr>
-                      <td colspan="6" ><div><input class="boton" type="submit" value="Aceptar"> <input class="boton" type="button" value="Limpiar"></div></td>
+                      <td colspan="6" >
+                        <div>
+                          <input class="boton" type="submit" value="Aceptar" > 
+                          <input class="boton" type="button" value="Limpiar">
+                        </div>
+                      </td>
                   </tr>
         </tbody>
         </table>

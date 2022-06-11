@@ -155,6 +155,8 @@ function precioEquipo() {
 }
 
 function cuotas(tarjeta) {
+    radioTarjeta = document.getElementById(tarjeta);
+    radioTarjeta.checked=true;
     if (tarjeta == "master") {
         alert('6 cuotas s/ interés')
     }
@@ -164,4 +166,39 @@ function cuotas(tarjeta) {
     if (tarjeta == "amex") {
         alert("12 cuotas sin interés")
     }
+}
+function validaciones_genericas(){
+    inputtexto = document.getElementById('apellido')
+    inputtexto2 = document.getElementById('nombre')
+    inputCantidad= document.getElementById('cantidad')
+    radioMaster = document.getElementById('master');
+    radioVisa = document.getElementById('visa');
+    radioAmex = document.getElementById('amex');
+    valortexto1 = inputtexto.value;
+    valortexto2 = inputtexto2.value;
+    if (!(/[A-Za-z]+$/.test(valortexto1))){
+        alert("Escriba solo texto para el campo apellido")
+        return false;
+    }
+    if (!(/[A-Za-z]+$/.test(valortexto2))){
+        alert("Escriba solo texto para el campo nombre")
+        return false;
+    }
+    if (!inputtexto.checkValidity()){
+        alert("Escriba solo 25 caracteres campo apellido")
+        return false;
+    }
+    if (!inputtexto2.checkValidity()){
+        alert("Escriba solo 25 caracteres campo nombre")
+        return false;
+    }
+    if (!inputCantidad.validity){
+        alert("Escriba solo 25 caracteres ")
+        return false;
+    }
+    if (!(radioMaster.checked || radioAmex.checked || radioVisa.checked)){
+        alert("Debe seleccionar una tarjeta");
+        return false;
+    }
+    return true;
 }
